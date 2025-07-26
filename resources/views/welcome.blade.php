@@ -20,7 +20,7 @@
             </style>
         @endif
     </head>
-    
+
    <body class="relative min-h-screen bg-gradient-to-br from-blue-700 to-blue-600"
           dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
 
@@ -29,7 +29,7 @@
   <a href="{{ route('change_lang',  app()->getLocale() === 'ar' ? 'en' : 'ar' ) }}" class="hover:text-teal-300"> <i class="fa-solid fa-globe"></i>  {{ app()->getLocale() }} </a>
 
    </div>
-    
+
     <div  class="min-h-screen flex flex-col justify-center items-center ">
    <div class="mb-16">
                 <a href="/">
@@ -39,31 +39,31 @@
 
     <div class="text-center text-white">
 
-    <h1 class="text-5xl">{{ __('Welcome to Somar Kesen\'s Blog')}} ({{ env('APP_NAME') }})! </h1>
+    <h1 class="text-5xl">{{ __('Welcome to Tarek Atallah\'s Blog')}} ({{ env('APP_NAME') }})! </h1>
     <p class="text-xl mt-4">{{ __('Learn all about web developement, freelancing and more') }}!</p>
     @guest
     <a href="{{ route('all_posts') }}">
-       
+
     <x-primary-button class="bg-green-500 hover:bg-green-400 focus:bg-green-400 active:bg-green-400 mt-6 ">
         {{ __('Start your journey') }}
-    </x-primary-button> 
+    </x-primary-button>
     </a>
     @endguest
 
     @auth
     @if(auth()->user()->is_admin)
     <a href="{{ route('dashboard') }}">
-       
+
     <x-primary-button class="bg-green-500 hover:bg-green-400 focus:bg-green-400 active:bg-green-400 mt-6 ">
         {{ __('Dashboard') }}
-    </x-primary-button> 
+    </x-primary-button>
     </a>
     @else
     <a href="{{ route('all_posts') }}">
-       
+
     <x-primary-button class="bg-green-500 hover:bg-green-400 focus:bg-green-400 active:bg-green-400 mt-6 ">
         {{ __('Home page') }}
-    </x-primary-button> 
+    </x-primary-button>
     </a>
     @endif
     @endauth
